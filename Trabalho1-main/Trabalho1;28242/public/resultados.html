@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Resultados da Pesquisa</title>
+    <link rel="stylesheet" type="text/css" href="cabecalho.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="Rodape.css">
+</head>
+
+<header class="header">
+    <h1><a href="/" class="titulo">FindPlayers</a>
+    </h1>
+    <form id="search-form">
+        <input type="text" id="player-name" placeholder="  Pesquisar Jogador..." required>
+    </form>
+</header>
+
+<script>
+    document.getElementById('search-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const playerName = document.getElementById('player-name').value;
+
+        // Redireciona para a página de resultados com o nome do jogador como parâmetro na URL
+        window.location.href = `resultados.html?search=${encodeURIComponent(playerName)}`;
+    });
+</script>
+
+
+<body>
+    <div id="results-count"></div>
+    <ul id="player-list"></ul>
+    <ul id="player-list">
+        <!-- Os resultados serão inseridos aqui -->
+    </ul>
+    <script src="resultados.js"></script>
+</body>
+<footer>
+    <p class="footer-text">Desenvolvido por: Tiago Melo nº28242</p>
+</footer>
+</html>
