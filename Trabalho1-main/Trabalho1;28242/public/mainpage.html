@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa de Jogadores</title>
+    <link rel="stylesheet" type="text/css" href="mainpage.css">
+</head>
+<body>
+    <h1>FindPlayers</h1>
+    <form id="search-form">
+        <input type="  text" id="player-name" placeholder="  Pesquisar Jogador..." required>
+    </form>
+</div>
+
+    <script>
+        document.getElementById('search-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const playerName = document.getElementById('player-name').value;
+
+            // Redireciona para a página de resultados com o nome do jogador como parâmetro na URL
+            window.location.href = `resultados.html?search=${encodeURIComponent(playerName)}`;
+        });
+    </script>
+
+</body>
+</html>
